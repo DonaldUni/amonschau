@@ -41,16 +41,19 @@ public class MyUI extends UI {
         filterText.setPlaceholder("filter by name...");
         filterText.addValueChangeListener(e -> updateList());
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
+        filterText.setId("tfFilter");
 
         Button clearFilterTextBtn = new Button(FontAwesome.TIMES);
         clearFilterTextBtn.setDescription("Clear the current filter");
         clearFilterTextBtn.addClickListener(e -> filterText.clear());
+        clearFilterTextBtn.setId("btnClearFilter");
 
         CssLayout filtering = new CssLayout();
         filtering.addComponents(filterText, clearFilterTextBtn);
         filtering.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
         Button addCustomerBtn = new Button("Add new customer");
+        addCustomerBtn.setId("addNewCustomer");
         addCustomerBtn.addClickListener(e -> {
             grid.asSingleSelect().clear();
             form.setCustomer(new Customer());

@@ -35,11 +35,20 @@ public class CustomerForm extends FormLayout {
         status.setItems(CustomerStatus.values());
         save.setStyleName(ValoTheme.BUTTON_PRIMARY);
         save.setClickShortcut(KeyCode.ENTER);
+        save.setId("btnSave");
 
         binder.bindInstanceFields(this);
 
+        delete.setId("btnDelete");
+
         save.addClickListener(e -> this.save());
         delete.addClickListener(e -> this.delete());
+
+        firstName.setId("tfFirstName");
+        lastName.setId("tfLastName");
+        email.setId("tfEmail");
+        status.setId("selectStatus");
+
     }
 
     public void setCustomer(Customer customer) {
